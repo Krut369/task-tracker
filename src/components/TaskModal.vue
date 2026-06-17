@@ -16,9 +16,14 @@
           
           <!-- Header -->
           <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
-            <h3 class="text-base font-bold text-slate-900 dark:text-white m-0">
-              {{ isEditMode ? 'Edit Task Info' : 'Add New Task' }}
-            </h3>
+            <div class="space-y-0.5">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white m-0">
+                {{ isEditMode ? 'Edit Task Info' : 'Add New Task' }}
+              </h3>
+              <span v-if="isEditMode && task?.id" class="text-[9px] font-mono text-slate-450 dark:text-slate-500 uppercase tracking-wider block font-bold">
+                Task ID: TASK-{{ task.task_number || task.id.substring(0, 8) }}
+              </span>
+            </div>
             <button 
               @click="$emit('close')"
               class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"

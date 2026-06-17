@@ -34,6 +34,7 @@ create table public.projects (
 -- 4. Tasks Table
 create table public.tasks (
   id uuid default gen_random_uuid() primary key,
+  task_number serial,
   project_id uuid not null,
   title text not null,
   description text,

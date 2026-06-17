@@ -40,7 +40,7 @@
           <!-- Header and status -->
           <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5 pb-5 border-b border-slate-100 dark:border-slate-800">
             <div class="space-y-1.5">
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Task ID: #{{ task.id.substring(0,8) }}</span>
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono">Task ID: TASK-{{ task.task_number || task.id.substring(0,8) }}</span>
               <h2 class="text-lg font-black text-slate-900 dark:text-white leading-snug">
                 {{ task.title }}
               </h2>

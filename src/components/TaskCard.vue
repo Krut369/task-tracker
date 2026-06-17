@@ -9,16 +9,21 @@
       isDragging ? 'opacity-40 border-dashed border-primary-400' : ''
     ]"
   >
-    <!-- Priority Badge -->
+    <!-- Priority Badge & ID -->
     <div class="flex items-center justify-between mb-2">
-      <span 
-        :class="[
-          'px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider',
-          priorityClasses[task.priority] || 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
-        ]"
-      >
-        {{ task.priority }}
-      </span>
+      <div class="flex items-center gap-1.5">
+        <span 
+          :class="[
+            'px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider',
+            priorityClasses[task.priority] || 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-350'
+          ]"
+        >
+          {{ task.priority }}
+        </span>
+        <span class="text-[9px] font-mono font-bold text-slate-400 dark:text-slate-500 uppercase">
+          TASK-{{ task.task_number || task.id.substring(0, 8) }}
+        </span>
+      </div>
       
       <!-- Quick Edit Actions (Show on hover) -->
       <div class="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 absolute top-3.5 right-4 z-10 bg-white dark:bg-slate-900 pl-2">
